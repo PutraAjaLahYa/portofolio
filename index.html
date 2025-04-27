@@ -1,0 +1,613 @@
+ <!DOCTYPE html>
+ <html lang="id">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+ <title>Portofolio Saya - Putra Baruta</title>
+ <meta name="description" content="Selamat datang di portofolio saya. Saya adalah seorang mahasiswa semester 6 Teknik Informatika, lihat proyek dan pengalaman saya di sini.">
+ <meta name="keywords" content="Portofolio, Web Developer, Frontend Developer, Contoh Portofolio, template portofolio, portofolio mahasiswa">
+ <meta name="author" content="Putra Baruta">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <meta property="og:title" content="Portofolio Saya - Putra Baruta" />
+ <meta property="og:description" content="Lihat karya dan pengalaman saya di dunia teknologi dan kreatif.">
+ <meta property="og:image" content="https://www.namadomainkamu.com/logo_web.png" />
+ <meta property="og:url" content="https://www.namadomainkamu.com/" />
+ <meta property="og:type" content="website" />
+
+ <link rel="icon" type="image/png" href="logo_web.png" />
+
+     <title>Portofolio Saya</title>
+         <style>
+             html {
+                 scroll-behavior: smooth;
+             }
+             body {
+                 margin: 0;
+                 font-family: 'Poppins', sans-serif;
+                 background-image: url('logo4_portofolio.png');
+                 background-size: cover;
+                 background-repeat: no-repeat;
+                 background-attachment: fixed;
+                 background-position: center;
+                 background-color: #ffffff;
+             }
+             nav {
+                 display: flex;
+                 justify-content: space-between;
+                 align-items: center;
+                 padding: 10px 30px;
+                 background: linear-gradient(to right, #87CEFA, #ffffff);
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                 position: sticky;
+                 top: 0;
+                 z-index: 1000;
+             }
+             .flag-selector {
+                 display: flex;
+                 align-items: center;
+                 gap: 10px;
+             }
+             .flag-selector img {
+                 width: 30px;
+                 height: 20px;
+                 cursor: pointer;
+                 transition: transform 0.3s ease;
+             }
+             .flag-selector img:hover {
+                 transform: scale(1.1);
+             }
+             .menu {
+                 display: flex;
+                 gap: 25px;
+             }
+             .menu a {
+                 text-decoration: none;
+                 color: #333;
+                 font-weight: 600;
+                 transition: color 0.3s;
+             }
+             .menu a:hover {
+                 color: #007BFF;
+             }
+             .portfolio-title {
+                 font-weight: 700;
+                 font-size: 18px;
+                 color: #333;
+             }
+             .menu-toggle {
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    background: transparent;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+             .beranda, .tentang {
+                 min-height: 30vh;
+                 padding: 80px 20px;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 text-align: center;
+                 background: transparent;
+             }
+             .beranda-content, .tentang-content {
+                 max-width: 700px;
+                 width: 90%;
+                 background: rgba(255, 255, 255, 0.2);
+                 padding: 40px;
+                 border-radius: 20px;
+                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                 backdrop-filter: blur(10px);
+                 -webkit-backdrop-filter: blur(10px);
+             }
+             .beranda-content h1, .tentang-content h2 {
+                 font-size: 36px;
+                 margin-bottom: 20px;
+                 color: #000000;
+                 text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+             }
+             .beranda-content p, .tentang-content p {
+                 font-size: 18px;
+                 color: #000000;
+                 margin-bottom: 20px;
+                 line-height: 1.6;
+                 text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+             }
+             .btn-cta {
+                 display: inline-block;
+                 padding: 12px 25px;
+                 background: #007BFF;
+                 color: white;
+                 text-decoration: none;
+                 border-radius: 10px;
+                 font-weight: 600;
+                 transition: background 0.3s;
+             }
+             .btn-cta:hover {
+                 background: #0056b3;
+             }   
+             .proyek {
+                 min-height: 30vh;
+                 padding: 80px 20px;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 background: transparent;
+             }
+             .proyek-content {
+                 max-width: 700px;
+                 width: 90%;
+                 background: rgba(255, 255, 255, 0.2);
+                 padding: 40px;
+                 border-radius: 20px;
+                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                 backdrop-filter: blur(10px);
+                 -webkit-backdrop-filter: blur(10px);
+                 text-align: center;
+             }
+             .proyek-content h2 {
+                 font-size: 36px;
+                 margin-bottom: 40px;
+                 color: #000000;
+                 text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+             }
+             .folder-container {
+                 display: flex;
+                 flex-wrap: wrap;
+                 justify-content: center;
+                 gap: 30px;
+             }
+             .folder-item {
+                 display: flex;
+                 flex-direction: column;
+                 align-items: center;
+                 background: rgba(255, 255, 255, 0.3);
+                 padding: 20px;
+                 border-radius: 15px;
+                 width: 150px;
+                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                 transition: transform 0.3s, background 0.3s;
+                 cursor: pointer;
+             }
+             .folder-item:hover {
+                 transform: scale(1.05);
+                 background: rgba(255, 255, 255, 0.4);
+             }
+             .folder-item img {
+                 width: 80px;
+                 margin-bottom: 15px;
+             }
+             .folder-item p {
+                 font-size: 16px;
+                 color: #000000;
+                 text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+             }
+             .sertifikat-gallery {
+                 margin-top: 20px;
+                 display: flex;
+                 flex-wrap: wrap;
+                 gap: 15px;
+                 justify-content: center;
+             }
+             .sertifikat-gallery img {
+                 width: 200px;
+                 height: auto;
+                 border-radius: 10px;
+                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                 transition: transform 0.3s ease;
+             }
+             .sertifikat-gallery img:hover {
+                 transform: scale(1.05);
+             }
+             .pendidikan {
+                 min-height: 30vh;
+                 padding: 80px 20px;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 background: transparent;
+             }
+             .pendidikan-content {
+                 max-width: 700px;
+                 width: 90%;
+                 background: rgba(255, 255, 255, 0.2);
+                 padding: 40px;
+                 border-radius: 20px;
+                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                 backdrop-filter: blur(10px);
+                 -webkit-backdrop-filter: blur(10px);
+                 text-align: center;
+             }
+             .pendidikan-menu {
+                 margin-bottom: 30px;
+                 display: flex;
+                 justify-content: center;
+                 flex-wrap: wrap;
+                 gap: 15px;
+             } 
+             .tab-button {
+                 padding: 10px 20px;
+                 background: #007BFF;
+                 color: white;
+                 border: none;
+                 border-radius: 8px;
+                 font-weight: 600;
+                 cursor: pointer;
+                 transition: background 0.3s;
+             }
+             .tab-button:hover {
+                 background: #0056b3;
+             }
+             .tab-content {
+                 width: 95%;
+                 background: rgba(255, 255, 255, 0.6); 
+                 padding: 20px;
+                 border-radius: 15px;
+                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                 display: none;
+                 text-align: left;
+             }
+             .tab-content h3 {
+                 color: #333;
+                 margin-bottom: 10px;
+             }
+             .tab-content p {
+                 color: #555;
+                 line-height: 1.6;
+             }
+             .kontak {
+                 min-height: 50vh;
+                 padding: 80px 20px;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 background: transparent;
+             }
+             .kontak-content {
+                 max-width: 700px;
+                 width: 90%;
+                 background: rgba(255, 255, 255, 0.2);
+                 padding: 40px;
+                 border-radius: 20px;
+                 box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                 backdrop-filter: blur(10px);
+                 -webkit-backdrop-filter: blur(10px);
+                 text-align: center;
+             }  
+             .kontak-content h2 {
+                 font-size: 32px;
+                 margin-bottom: 20px;
+                 color: #333;
+             }
+             .social-icons {
+                 display: flex;
+                 flex-direction: column;
+                 gap: 15px;
+                 margin-bottom: 30px;
+             }
+             .social-icons a {
+                 display: inline-flex;
+                 align-items: center;
+                 gap: 10px;
+                 font-size: 20px;
+                 color: #007BFF;
+                 text-decoration: none;
+                 transition: color 0.3s;
+             }
+             .social-icons a:hover {
+                 color: #0056b3;
+             }
+             .social-icons i {
+                 font-size: 24px;
+             }
+             .copyright {
+                 font-size: 16px;
+                 color: #777;
+                 margin-top: 20px;
+             }
+             #scrollTopBtn {
+                 position: fixed;
+                 bottom: 20px;
+                 right: 20px;
+                 width: 50px;
+                 height: 50px;
+                 background: rgba(255, 255, 255, 0.6);
+                 color: rgb(0, 0, 0);
+                 font-size: 24px;
+                 border: none;
+                 border-radius: 50%;
+                 cursor: pointer;
+                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                 opacity: 0; 
+                 pointer-events: none; 
+                 transform: translateY(100px); 
+                 transition: opacity 0.5s ease, transform 0.5s ease;
+             }
+             #scrollTopBtn.show {
+                 opacity: 1; 
+                 pointer-events: auto; 
+                 transform: translateY(0); 
+             }
+             #scrollTopBtn:hover {
+                 background: #0056b3;
+                 transform: translateY(0) scale(1.1); 
+             }
+     </style>
+ </head>
+ <body>
+
+     <nav>
+         <div class="flag-selector">
+             <img src="https://flagcdn.com/w40/id.png" alt="Indonesia" id="id-flag" title="Bahasa Indonesia">
+             <img src="https://flagcdn.com/w40/gb.png" alt="English" id="en-flag" title="English">
+         </div>
+    
+         <div class="menu-toggle" id="menu-toggle">
+             ☰ Menu
+         </div>
+    
+         <div class="menu" id="menu">
+             <a href="#beranda">Beranda</a>
+             <a href="#tentang">Tentang</a>
+             <a href="#pendidikan">Pendidikan</a>
+             <a href="#project">Project</a>
+             <a href="#kontak">Kontak</a>
+         </div>
+    
+         <div class="portfolio-title" id="portfolio-title">
+             Portofolio Saya
+         </div>
+     </nav>
+
+ <section class="beranda" id="beranda">
+     <div class="beranda-content">
+         <h1 id="beranda-title">Halo, Saya Putra Baruta 👋</h1>
+             <p id="beranda-desc-1">Saya seorang Mahasiswa semester 6 Teknik Informatika.</p>
+             <p id="beranda-desc-2">Mari berkenalan lebih dekat dan lihat karya-karya saya!</p>
+                 <a href="#project" class="btn-cta" id="btn-cta">Lihat Project</a>
+     </div>
+  </section>
+
+  <section class="tentang" id="tentang">
+     <div class="tentang-content">
+         <h2 id="tentang-title">Tentang Saya</h2>
+             <p id="tentang-desc-1">Halo! Nama saya Putra Baruta, seorang Mahasiswa Universitas Muhammadiyah Riau. Saya sangat antusias dalam mempelajari ilmu coding.</p>
+             <p id="tentang-desc-2">Untuk saat ini saya memiliki sedikit ilmu tentang pembuatan web, database, apk android, menggunakan bahasa HTML, CSS, JS, JAVA, PHP, PYTHON, Memang masih jauh dari kata hebat dan baru mempelajari dasar nya saja dari pendidikan saya tetapi saya selalu bersemangat untuk belajar ilmu coding untuk memperdalam keterampilan saya.</p>
+             <p id="tentang-desc-3">Saya juga mengikuti beberapa pelatihan untuk memperdalam ilmu coding saya di situs situs online dan juga mendapat kan sertifikat namun saya merasa itu masih belum cukup untuk di sebut sebagai programer</p>
+                 <div class="sertifikat-gallery">
+                     <img src="sertifikat1.jpg" alt="Sertifikat 1">
+                     <img src="sertifikat2.jpg" alt="Sertifikat 2">
+                 </div>
+             <p id="tentang-desc-4">Selain coding, saya juga suka Futsal, dengar musik, game.</p>
+     </div>
+  </section>
+
+  <section id="pendidikan" class="pendidikan">
+     <div class="pendidikan-content">
+         <h2 id="pendidikan-title">Pendidikan</h2>
+             <div class="pendidikan-menu">
+                 <button class="tab-button" onclick="openTab('kuliah')">Kuliah</button>
+                 <button class="tab-button" onclick="openTab('smk')">SMK</button>
+                 <button class="tab-button" onclick="openTab('smp')">SMP</button>
+                 <button class="tab-button" onclick="openTab('sd')">SD</button>
+             </div>
+  
+             <div class="tab-content" id="kuliah">
+                 <h3 id="pendidikan-kuliah">Kuliah</h3>
+                     <p id="kuliah-desc">Lalu pada tahun 2022 saya masuk ke UNIVERSITAS MUHAMMADIYAH RIAU dengan prodi TEKNIK INFORMATIKA dan pada saat portofolio ini di buat saya sudah semester 6, disini saya juga ingin memperdalam ilmu pemrograman saya khusus nya machin learning dan pemrograman mobile karna itu adalah matkul kesukaan saya pada semester ini.</p>
+             </div>
+  
+             <div class="tab-content" id="smk">
+                 <h3 id="pendidikan-smk">SMK</h3>
+                     <p id="smk-desc">Pada tahun 2019 saya melanjut kan pendidikan di SMK MUHAMMADIYAH 3 Pekanbaru dengan jurusan TKJ dan disana saya mulai mempelajari tentang pemrograman, jaringan, operasi system, dan hardware.</p>
+             </div>
+  
+             <div class="tab-content" id="smp">
+                 <h3 id="pendidikan-smp">SMP</h3>
+                     <p id="smp-desc">Setelah Menyelesaikan sekolah dasar pada 2016, saya memasuki smp di sekitaran rumah saya yang bernama SMPN 4 TAMBANG pada saat itu saya sangat sering bermain warnet untuk mempelajari tentang komputer walaupun pada akhir nya terjebak di dalam game.</p>
+             </div>
+  
+             <div class="tab-content" id="sd">
+                 <h3 id="pendidikan-sd">SD</h3>
+                     <p id="sd-desc">Sekolah dasar saya di mulai pada tahun 2010 di SDN 024 TARAI BANGUN TAMBANG, dan waktu itu saya mulai menyukai komputer saat pertama kali masuk ke dalam kelas TIK untuk belajar menggambar.</p>
+             </div>
+     </div>
+  </section>
+  
+
+  <section class="proyek" id="project">
+     <div class="proyek-content">
+         <h2 id="proyek-title">Proyek Saya</h2>
+             <div class="folder-container">
+                 <div class="folder-item">
+                     <a href="https://www.toolskamu.my.id/">
+                         <img src="logo_folder.png" alt="Penghitung IPK">
+                             <p id="proyek-desc-1">Penghitung IPK</p></a>
+                 </div>
+
+                  <div class="folder-item">
+                     <a href="comingsoon">
+                         <img src="logo_folder.png" alt="Kalkulator">
+                             <p id="proyek-desc-2">Kalkulator</p></a>
+                 </div>
+         
+                 <div class="folder-item">
+                     <a href="comingsoon">
+                         <img src="logo_folder.png" alt="Keuangan UMKM">
+                             <p id="proyek-desc-3">Pencatat Keuangan UMKM</p></a>
+                 </div>
+             </div>
+     </div>
+  </section>
+
+  <section class="kontak" id="kontak">
+     <div class="kontak-content">
+         <h2 id="kontak-title">Kontak Saya</h2>
+             <div class="social-icons">
+                 <a href="https://wa.me/+6282376599674" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                 <a href="https://instagram.com/putrabaruta10" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                 <a href="https://github.com/PutraAjaLahYa" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                 <a href="mailto:penamerahada2@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a>
+             </div>
+                 <p class="copyright" id="copyright">
+                     &copy; Putra Baruta 2025 | Minggu, 27 April 2025
+                 </p>
+     </div>
+  </section>
+
+ <script>
+     document.getElementById('id-flag').onclick = () => {
+         alert("Ganti ke Bahasa Indonesia!");
+     }   
+
+     document.getElementById('en-flag').onclick = () => {
+         alert("Switch to English!");
+     }
+ document.getElementById('id-flag').onclick = () => {
+
+     document.getElementById('beranda-title').innerText = "Halo, Saya Putra Baruta 👋";
+     document.getElementById('beranda-desc-1').innerText = "Saya seorang Mahasiswa semester 6 Teknik Informatika.";
+     document.getElementById('beranda-desc-2').innerText = "Mari berkenalan lebih dekat dan lihat karya-karya saya!";
+     document.getElementById('btn-cta').innerText = "Lihat Project";
+
+     document.getElementById('tentang-title').innerText = "Tentang Saya";
+     document.getElementById('tentang-desc-1').innerText = "Halo! Nama saya Putra Baruta, seorang Mahasiswa Universitas Muhammadiyah Riau. Saya sangat antusias dalam mempelajari ilmu coding.";
+     document.getElementById('tentang-desc-2').innerText = "Untuk saat ini saya memiliki sedikit ilmu tentang pembuatan web, database, apk android, menggunakan bahasa HTML, CSS, JS, JAVA, PHP, PYTHON, Memang masih jauh dari kata hebat dan baru mempelajari dasar nya saja dari pendidikan saya tetapi saya selalu bersemangat untuk belajar ilmu coding untuk memperdalam keterampilan saya.";
+     document.getElementById('tentang-desc-3').innerText = "Saya juga mengikuti beberapa pelatihan untuk memperdalam ilmu coding saya di situs situs online dan juga mendapat kan sertifikat namun saya merasa itu masih belum cukup untuk di sebut sebagai programer.";
+     document.getElementById('tentang-desc-4').innerText = "Selain coding, saya juga suka Futsal, dengar musik, game.";
+
+     document.getElementById('pendidikan-title').innerText = "Pendidikan";
+     document.getElementById('pendidikan-kuliah').innerText = "Kuliah";
+     document.getElementById('kuliah-desc').innerText = "Lalu pada tahun 2022 saya masuk ke UNIVERSITAS MUHAMMADIYAH RIAU dengan prodi TEKNIK INFORMATIKA dan pada saat portofolio ini di buat saya sudah semester 6, disini saya juga ingin memperdalam ilmu pemrograman saya khususnya machine learning dan pemrograman mobile karena itu adalah matkul kesukaan saya pada semester ini.";
+     document.getElementById('pendidikan-smk').innerText = "SMK";
+     document.getElementById('smk-desc').innerText = "Pada tahun 2019 saya melanjutkan pendidikan di SMK MUHAMMADIYAH 3 Pekanbaru dengan jurusan TKJ dan disana saya mulai mempelajari tentang pemrograman, jaringan, sistem operasi, dan hardware.";
+     document.getElementById('pendidikan-smp').innerText = "SMP";
+     document.getElementById('smp-desc').innerText = "Setelah menyelesaikan sekolah dasar pada 2016, saya memasuki SMP di sekitaran rumah saya yang bernama SMPN 4 Tambang pada saat itu saya sangat sering bermain warnet untuk mempelajari tentang komputer walaupun pada akhirnya terjebak di dalam game.";
+     document.getElementById('pendidikan-sd').innerText = "SD";
+     document.getElementById('sd-desc').innerText = "Sekolah dasar saya dimulai pada tahun 2010 di SDN 024 Tarai Bangun Tambang, dan waktu itu saya mulai menyukai komputer saat pertama kali masuk ke dalam kelas TIK untuk belajar menggambar.";
+     
+     document.querySelector('button[onclick="openTab(\'kuliah\')"]').innerText = "Kuliah";
+     document.querySelector('button[onclick="openTab(\'smk\')"]').innerText = "SMK";
+     document.querySelector('button[onclick="openTab(\'smp\')"]').innerText = "SMP";
+     document.querySelector('button[onclick="openTab(\'sd\')"]').innerText = "SD";
+
+     document.getElementById('proyek-title').innerText = "Proyek Saya";
+     document.getElementById('proyek-desc-1').innerText = "Penghitung IPK";
+     document.getElementById('proyek-desc-2').innerText = "Kalkulator";
+     document.getElementById('proyek-desc-3').innerText = "Pencatat Keuangan UMKM";
+
+     document.getElementById('kontak-title').innerText = "Kontak Saya";
+     document.getElementById('copyright').innerText = "© Putra Baruta 2025 | Minggu, 27 April 2025";
+ };
+
+ document.getElementById('en-flag').onclick = () => {
+   
+     document.getElementById('beranda-title').innerText = "Hi, I'm Putra Baruta 👋";
+     document.getElementById('beranda-desc-1').innerText = "I am a 6th semester Informatics Engineering student.";
+     document.getElementById('beranda-desc-2').innerText = "Let's get to know each other better and see my projects!";
+     document.getElementById('btn-cta').innerText = "View Projects";
+
+     document.getElementById('tentang-title').innerText = "About Me";
+     document.getElementById('tentang-desc-1').innerText = "Hello! My name is Putra Baruta, a student at Universitas Muhammadiyah Riau. I am very passionate about learning coding.";
+     document.getElementById('tentang-desc-2').innerText = "Currently, I have basic knowledge about web development, databases, Android apps, using HTML, CSS, JS, JAVA, PHP, and PYTHON. I still have a lot to learn, but I am always enthusiastic about coding to deepen my skills.";
+     document.getElementById('tentang-desc-3').innerText = "I have also attended several online courses and obtained certificates, but I still feel it’s not enough to be called a programmer.";
+     document.getElementById('tentang-desc-4').innerText = "Besides coding, I also love futsal, listening to music, and gaming.";
+
+     document.getElementById('pendidikan-title').innerText = "Education";
+     document.getElementById('pendidikan-kuliah').innerText = "University";
+     document.getElementById('kuliah-desc').innerText = "In 2022, I enrolled at Universitas Muhammadiyah Riau majoring in Informatics Engineering. At the time of creating this portfolio, I am already in the 6th semester. Here, I want to deepen my knowledge in machine learning and mobile programming, which are my favorite subjects.";
+     document.getElementById('pendidikan-smk').innerText = "Vocational School";
+     document.getElementById('smk-desc').innerText = "In 2019, I continued my education at SMK Muhammadiyah 3 Pekanbaru majoring in Computer and Network Engineering (TKJ), where I learned programming, networking, operating systems, and hardware.";
+     document.getElementById('pendidikan-smp').innerText = "Junior High School";
+     document.getElementById('smp-desc').innerText = "After completing elementary school in 2016, I attended SMPN 4 Tambang. At that time, I often went to internet cafes to learn about computers, although I ended up being hooked on games.";
+     document.getElementById('pendidikan-sd').innerText = "Elementary School";
+     document.getElementById('sd-desc').innerText = "I started elementary school in 2010 at SDN 024 Tarai Bangun Tambang. It was during this time that I first fell in love with computers when attending my first ICT class to learn drawing.";
+
+     document.querySelector('button[onclick="openTab(\'kuliah\')"]').innerText = "University";
+     document.querySelector('button[onclick="openTab(\'smk\')"]').innerText = "Vocational School";
+     document.querySelector('button[onclick="openTab(\'smp\')"]').innerText = "Junior High School";
+     document.querySelector('button[onclick="openTab(\'sd\')"]').innerText = "Elementary School";
+
+     document.getElementById('proyek-title').innerText = "My Projects";
+     document.getElementById('proyek-desc-1').innerText = "GPA Calculator";
+     document.getElementById('proyek-desc-2').innerText = "Calculator";
+     document.getElementById('proyek-desc-3').innerText = "UMKM Finance Tracker";
+
+     document.getElementById('kontak-title').innerText = "Contact Me";
+     document.getElementById('copyright').innerText = "© Putra Baruta 2025 | Sunday, April 27, 2025";
+ };
+         function openTab(tabName) {
+         const tabs = document.querySelectorAll('.tab-content');
+         const clickedTab = document.getElementById(tabName);
+
+         if (clickedTab.style.display === 'block') {
+             clickedTab.style.display = 'none';
+         } else {
+         tabs.forEach(tab => {
+         tab.style.display = 'none';
+     });
+     clickedTab.style.display = 'block';
+     }
+ }
+ window.onscroll = function() {
+     let btn = document.getElementById("scrollTopBtn");
+         if (document.documentElement.scrollTop > 200) {
+         btn.classList.add("show");
+         } else {
+         btn.classList.remove("show");
+         }  
+ };
+
+ function scrollToTop() {
+     window.scrollTo({ top: 0, behavior: "smooth" });
+ }
+ const menuToggle = document.getElementById('menu-toggle');
+     const menu = document.getElementById('menu');
+
+ menuToggle.addEventListener('click', (e) => {
+     e.stopPropagation(); // Biar klik menu toggle gak langsung ketutup
+     menu.classList.toggle('show');
+     });
+
+ document.addEventListener('click', (e) => {
+     if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+     menu.classList.remove('show');
+     }
+     });
+ </script>
+
+ <button id="scrollTopBtn" onclick="scrollToTop()">⬆</button>
+
+ </body>
+ </html>
