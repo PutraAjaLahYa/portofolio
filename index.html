@@ -840,6 +840,9 @@
                      <img src="sertifikat1.jpg" alt="Sertifikat 1">
 
                      <img src="sertifikat2.jpg" alt="Sertifikat 2">
+                     <img src="3.png" alt="Sertifikat 3">
+                     <img src="bnspJOF.jpeg" alt="Sertifikat 4">
+                     <img src="Harvard.png" alt="Sertifikat 5">
 
                  </div>
 
@@ -1135,13 +1138,13 @@
 
 
 
-     document.querySelector('button[onclick="openTab(\\'kuliah\\')"]').innerText = "Kuliah";
+    document.querySelector(`button[onclick="openTab('kuliah')"]`).innerText = "Kuliah";
 
-     document.querySelector('button[onclick="openTab(\\'smk\\')"]').innerText = "SMK";
+    document.querySelector(`button[onclick="openTab('smk')"]`).innerText = "SMK";
 
-     document.querySelector('button[onclick="openTab(\\'smp\\')"]').innerText = "SMP";
+    document.querySelector(`button[onclick="openTab('smp')"]`).innerText = "SMP";
 
-     document.querySelector('button[onclick="openTab(\\'sd\\')"]').innerText = "SD";
+    document.querySelector(`button[onclick="openTab('sd')"]`).innerText = "SD";
 
 
 
@@ -1209,13 +1212,13 @@
 
 
 
-     document.querySelector('button[onclick="openTab(\\'kuliah\\')"]').innerText = "University";
+    document.querySelector("button[onclick=\"openTab('kuliah')\"]").innerText = "University";
 
-     document.querySelector('button[onclick="openTab(\\'smk\\')"]').innerText = "Vocational School";
+    document.querySelector('button[onclick*="smk"]').innerText = "Vocational School";
 
-     document.querySelector('button[onclick="openTab(\\'smp\\')"]').innerText = "Junior High School";
+    document.querySelector("button[onclick=\"openTab('smp')\"]").innerText = "Junior High School";
 
-     document.querySelector('button[onclick="openTab(\\'sd\\')"]').innerText = "Elementary School";
+    document.querySelector("button[onclick=\"openTab('sd')\"]").innerText = "Elementary School";
 
 
 
@@ -1261,7 +1264,7 @@
 
  }
 
- window\.onscroll = function() {
+ window.onscroll = function() {
 
      let btn = document.getElementById("scrollTopBtn");
 
@@ -1281,7 +1284,7 @@
 
  function scrollToTop() {
 
-     window\.scrollTo({ top: 0, behavior: "smooth" });
+     window.scrollTo({ top: 0, behavior: "smooth" });
 
  }
 
